@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/Index', function () {
+Route::get('/index', function () {
     return \App\User::all();
     // return \App\User::find(1);
     // return [
@@ -22,7 +22,7 @@ Route::get('/Index', function () {
     //     'sobrenome' => 'Scherma',
     // ];
 });
-Route::post('/Cadastro', function(\Illuminate\Http\Request $request) {
+Route::post('/cadastro', function(\Illuminate\Http\Request $request) {
     $data = $request->validate([
         'name'      => 'required|string|max:32',
         'email'     => 'required|string|max:64',
