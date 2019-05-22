@@ -14,3 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/a', function () {
+    return \App\User::all();
+    return \App\User::find(1);
+    return [
+        'nome' => 'Icaro',
+        'sobrenome' => 'Scherma',
+    ];
+});
+Route::post('/a', function() {
+    $data = request()->validate([
+        'name'      => 'required|string|max:32',
+        'email'     => 'required|string|max:64',
+        'password'  => 'required|string|min:6|max:24',
+    ]);
+    $data['password'] = bcrypt($data['password']);
+    return \App\User::create($data);
+});
