@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/a', function () {
+Route::get('/Index', function () {
     return \App\User::all();
     // return \App\User::find(1);
     // return [
@@ -22,13 +22,13 @@ Route::get('/a', function () {
     //     'sobrenome' => 'Scherma',
     // ];
 });
-Route::post('/b', function(\Illuminate\Support\Request $request) {
+Route::post('/Cadastro', function(\Illuminate\Http\Request $request) {
     $data = $request->validate([
         'name'      => 'required|string|max:32',
         'email'     => 'required|string|max:64',
         'password'  => 'required|string|min:6|max:24',
     ]);
-    die('aaa');
+    
     $data['password'] = bcrypt($data['password']);
     return \App\User::create($data);
 });
