@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', function () {
+Route::get('/Index', function () {
     return \App\User::all();
     // return \App\User::find(1);
     // return [
@@ -31,4 +31,10 @@ Route::post('/cadastro', function(\Illuminate\Http\Request $request) {
     
     $data['password'] = bcrypt($data['password']);
     return \App\User::create($data);
+});
+
+Route::get('/gps', function () {
+    
+    return \App\GPS::all();
+    
 });
