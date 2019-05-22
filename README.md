@@ -19,9 +19,8 @@
 * cliente \(id, nome, telefone, o tipo de lavagem, \)
 * cadastro \(id, nome, email, user, senha\)
 * serviço \(id, nome, cpf, tipo de serviço\(vai oferecer que tipo de limpeza?\)\)
-* localização \(GPS\) -
-  &gt;
-   forma de pagamento \(cartão ou dinheiro\)
+* localização \(GPS\) 
+*  forma de pagamento \(cartão ou dinheiro\)
 * avaliação
 * \(Chat\(sem implementar apenas pra dizer que tem\)\)
 
