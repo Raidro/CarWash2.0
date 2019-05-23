@@ -90,3 +90,10 @@ Route::get('/services', function () {
     return \App\Service::all();
        
 });
+//======================================================//
+//exemplo de como pegar informações da url
+//Route::get('/teste', function(Request $request){
+//    dd($_GET);
+//});
+//
+//======================================================//
