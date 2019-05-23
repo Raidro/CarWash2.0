@@ -14,13 +14,13 @@
 
 * Aplicativo que vai servir você chamar uma pessoa para limpar o seu carro aonde quer que vc esteja. simples, rapido e eficaz.
 
-#### \*\* O que vai ter? -&gt;\*\*
+#### O que vai ter? -&gt;
 
 * cliente \(id, nome, telefone, o tipo de lavagem, \)
 * cadastro \(id, nome, email, user, senha\)
 * serviço \(id, nome, cpf, tipo de serviço\(vai oferecer que tipo de limpeza?\)\)
 * localização \(GPS\) 
-*  forma de pagamento \(cartão ou dinheiro\)
+* forma de pagamento \(cartão ou dinheiro\)
 * avaliação
 * \(Chat\(sem implementar apenas pra dizer que tem\)\)
 
