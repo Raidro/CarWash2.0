@@ -34,7 +34,7 @@ Route::post('/cadastro', function(\Illuminate\Http\Request $request) {
     return \App\User::create($data);
 });
 
-Route::get('/gps', function () {
+Route::get('/location', function () {
     
     return \App\GPS::all();
     
