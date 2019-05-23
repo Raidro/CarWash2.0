@@ -41,15 +41,14 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
-/*
-|--------------------------------------------------------------------------
-| Return The Application
-|--------------------------------------------------------------------------
-|
-| This script returns the application instance. The instance is given to
-| the calling script so we can separate the building of the instances
-| from the actual running of the application and sending responses.
-|
-*/
+// Enables all CORS accesses
+// Isso aqui é pra qdo tentar acessar de outro canto ;)
+if ($_SERVER && isset($_SERVER['HTTP_ORIGIN'])) {
+    $http_origin = $_SERVER['HTTP_ORIGIN'];
+    header("Access-Control-Allow-Origin: $http_origin");
+    header('Access-Control-Allow-Credentials: true');
+    header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+}
 
 return $app;
