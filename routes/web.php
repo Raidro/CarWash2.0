@@ -22,6 +22,7 @@ Route::get('/Index', function () {
     //     'sobrenome' => 'Scherma',
     // ];
 });
+
 Route::post('/cadastro', function(\Illuminate\Http\Request $request) {
     $data = $request->validate([
         'name'      => 'required|string|max:32',
