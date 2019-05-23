@@ -36,6 +36,6 @@ Route::post('/cadastro', function(\Illuminate\Http\Request $request) {
 
 Route::get('/location', function () {
     
-    return \App\GPS::all();
+    return \App\Location::all();
     
 });
