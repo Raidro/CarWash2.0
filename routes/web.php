@@ -14,8 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/Index', function () {
     return \App\User::all();
+    
     // return \App\User::find(1);
     // return [
     //     'nome' => 'Icaro',
@@ -38,4 +40,53 @@ Route::get('/location', function () {
     
     return \App\Location::all();
     
+});
+
+Route::post('/location', function(\Illuminate\Http\Request $request) {
+    $data = $request->validate([
+        'lat'      => 'required|double|max:64',
+        'lng'     => 'required|double|max:64',
+        
+    ]);
+    
+    return \App\User::create($data);
+});
+
+
+Route::post('/client', function(\Illuminate\Http\Request $request) {
+    $data = $request->validate([
+        'name'      => 'required|string|max:32',
+        'tipodeservicos'     => 'required|string|max:64',
+        'valor'  => 'required|double|min:6|max:24',
+        'formadepagamento'  => 'required|string|min:6|max:24',
+        'codigo'  => 'required|string|min:6|max:24',
+        'localizacao'  => 'required|double|min:6|max:24',
+    ]);
+    
+    $data['codigo'] = bcrypt($data['codigo']);
+    return \App\Client::create($data);
+});
+
+Route::get('/client', function () {
+    return \App\Client::all();
+       
+});
+
+Route::post('/services', function(\Illuminate\Http\Request $request) {
+    $data = $request->validate([
+        'name'      => 'required|string|max:32',
+        'tipodeservicos'     => 'required|string|max:64',
+        'valor'  => 'required|double|min:6|max:24',
+        'formadepagamento'  => 'required|string|min:6|max:24',
+        'codigo'  => 'required|string|min:6|max:24',
+        'localizacao'  => 'required|double|min:6|max:24',
+    ]);
+    
+    $data['codigo'] = bcrypt($data['codigo']);
+    return \App\Service::create($data);
+});
+
+Route::get('/services', function () {
+    return \App\Service::all();
+       
 });
