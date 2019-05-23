@@ -11,6 +11,7 @@ class UserController extends Controller
         return \App\User::all();
 
     }
+    
     public function store(Request $request){
 
          
