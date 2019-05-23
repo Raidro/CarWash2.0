@@ -100,6 +100,6 @@ Route::get('/', function () {
 
 
 Route::resource('user', 'UserController');
-Route::resource('service', 'UserController');
-Route::resource('location', 'UserController');
-Route::resource('client', 'UserController');
+Route::resource('service', 'ServiceController');
+Route::resource('location', 'LocationController');
+Route::resource('client', 'ClientController');

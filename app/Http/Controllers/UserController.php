@@ -11,7 +11,7 @@ class UserController extends Controller
         return \App\User::all();
 
     }
-    
+
     public function store(Request $request){
 
          
@@ -28,5 +28,6 @@ class UserController extends Controller
        
     }
     public function update(Request $request){}
+        
     public function destroy(){}
 }

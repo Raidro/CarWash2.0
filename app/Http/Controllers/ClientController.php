@@ -27,5 +27,6 @@ class ClientController extends Controller
 
     }
     public function update(Request $request){}
+        
     public function destroy(Request $request){}
 }

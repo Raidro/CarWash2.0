@@ -10,7 +10,7 @@ class LocationController extends Controller
 
         return \App\Location::all();
     }
-    
+
     public function store(Request $request){
 
         $data = $request->validate([
@@ -23,5 +23,6 @@ class LocationController extends Controller
     }
 
     public function update(Request $request){}
+        
     public function destroy(Request $request){}
 }
