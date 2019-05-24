@@ -109,3 +109,9 @@ Route::get('payment-types', function () {
         'data' => App\Service::PAYMENT_TYPES
     ];
 });
+
+Route::get('service-types', function () {
+    return [
+        'data' => App\Service::SERVICE_TYPES
+    ];
+});
