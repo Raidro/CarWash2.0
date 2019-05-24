@@ -20,4 +20,4 @@ Route::resource('service', 'ServiceController');
 Route::resource('location', 'LocationController');
 
 Route::get('payment-types','ServiceController@paymentTypes' );
-Route::get('payment-types','ServiceController@serviceTypes' );
+Route::get('service-types','ServiceController@serviceTypes' );
