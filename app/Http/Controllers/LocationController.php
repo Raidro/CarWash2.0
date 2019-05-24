@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use \App\Location;
 use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request, Location $location){
 
-        return \App\Location::all();
+        return $location::all();
     }
 
-    public function store(Request $request){
+    public function show(Location $location)
+    {
+        return $location; // so mostra o usuario sem a necessidade do findorfail
+    }
+
+
+    public function store(Request $request, Location $location){
 
         $data = $request->validate([
             'lat'      => 'required|float|max:12',
@@ -19,10 +26,24 @@ class LocationController extends Controller
                     
         ]);
 
-        return \App\Location::create($data);
+        return $location::create($data);
     }
 
-    public function update(Request $request){}
+    public function update(Request $request, Location $location){
 
-    public function destroy(){}
+        $data = $request->validate([
+            'lat'      => 'required|float|max:12',
+            'lng'     => 'required|float|max:12',
+                    
+        ]);
+        $location->update($data);
+        return response($location, 200);
+
+    }
+
+    public function destroy(Location $location){
+
+        $location->delete();
+        return response(null, 204);
+    }
 }

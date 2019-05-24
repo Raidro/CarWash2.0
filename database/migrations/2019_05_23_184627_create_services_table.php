@@ -16,7 +16,6 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            //$table->string('tipodeservicos');
             $table->unsignedSmallInteger('tipodeservicos')->default(0);
             $table->float('valor');
             $table->unsignedSmallInteger('formadepagamento')->default(0);
