@@ -19,7 +19,7 @@ class CreateServicesTable extends Migration
             $table->unsignedSmallInteger('tipodeservicos')->default(0);
             $table->float('valor');
             $table->unsignedSmallInteger('formadepagamento')->default(0);
-            $table->float('codigo');
+            $table->string('codigo');
             $table->float('localizacao');
             $table->timestamps();
         });
