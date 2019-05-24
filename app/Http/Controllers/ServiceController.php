@@ -8,6 +8,7 @@ class ServiceController extends Controller
 {
     public function index(Request $request){
 
+        
         return \App\Service::all();
 
     }
