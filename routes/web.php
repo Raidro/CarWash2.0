@@ -102,7 +102,7 @@ Route::get('/', function () {
 Route::resource('user', 'UserController');
 Route::resource('service', 'ServiceController');
 Route::resource('location', 'LocationController');
-Route::resource('client', 'ClientController');
+//Route::resource('client', 'ClientController');
 
 Route::get('payment-types', function () {
     return [

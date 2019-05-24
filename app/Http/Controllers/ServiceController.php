@@ -46,7 +46,7 @@ class ServiceController extends Controller
             'localizacao'  => 'required|float|min:6|max:12',
         ]);
 
-        $data['codigo'] = bcrypt($data['codigo']);
+        $data['codigo'] = uniqid();
         $service->update($data);
         return response($service, 200);
 
