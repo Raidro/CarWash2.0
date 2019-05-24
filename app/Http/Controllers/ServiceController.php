@@ -10,19 +10,7 @@ class ServiceController extends Controller
     public function index(Request $request, Service $service){
 
 
-        // return \App\Service::all();
-
-        Route::get('payment-types', function () {
-            return [
-                'data' => App\Service::PAYMENT_TYPES
-            ];
-        });
-        
-        Route::get('service-types', function () {
-            return [
-                'data' => App\Service::SERVICE_TYPES
-            ];
-        });
+        return \App\Service::all();
 
     }
     
@@ -67,5 +55,19 @@ class ServiceController extends Controller
     public function destroy(Service $service){
         $service->delete();
         return response(null, 204);
+    }
+
+    public function paymentTypes(Service $service){
+
+        return [
+            'data' => App\Service::PAYMENT_TYPES
+        ];
+    }
+
+    public function serviceTypes(Service $service){
+        return [
+            'data' => App\Service::SERVICE_TYPES
+        ];
+
     }
 }

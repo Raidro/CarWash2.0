@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     protected $guarded = [];//
+    
     const PAYMENT_TYPES = [
         0 => 'A vista',
         1 => 'Cartao de Debito',
