@@ -14,8 +14,8 @@ class LocationController extends Controller
     public function store(Request $request){
 
         $data = $request->validate([
-            'lat'      => 'required|double|max:64',
-            'lng'     => 'required|double|max:64',
+            'lat'      => 'required|float|max:12',
+            'lng'     => 'required|float|max:12',
                     
         ]);
 

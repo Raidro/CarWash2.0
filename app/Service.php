@@ -13,4 +13,12 @@ class Service extends Model
         2 => 'Cartao de Credito 1x',
         // ... 
     ];
+
+    protected $guarded = [];//
+    const SERVICE_TYPES = [
+        0 => 'Simples',
+        1 => 'Completa',
+    
+        // ... 
+    ];
 }
