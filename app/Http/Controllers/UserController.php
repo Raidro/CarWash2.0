@@ -13,13 +13,20 @@ class UserController extends Controller
             return $query->where('name', 'like', '%'.$request->name.'%');
         })->when(!empty($request->email), function ($query) use ($request) {
             return $query->where('email', 'like', '%'.$request->email.'%');
-        })->latest();
+        })->when(!empty($request->type), function ($query) use ($request) {
+            if ($request->type == 'cliente') {
+                return $query->select('name');
+            } else if($request->type == 'prestador') {
+                return $query->select(['email']);
+            }
+            return $query;
+        })->latest(); // filtro, para filtrar por nome e email.
         return $users->paginate();
     }
 
     public function show(User $user)
     {
-        return $user;
+        return $user; // so mostra o usuario sem a necessidade do findorfail
     }
 
     public function store(Request $request, User $user)
