@@ -24,7 +24,7 @@
 
 #### 
 
-#### Diagrama do banco de dados -&gt;![](/assets/Captura de Tela_20190524230210.png)
+#### Diagrama do banco de dados -&gt;
 
 
 
