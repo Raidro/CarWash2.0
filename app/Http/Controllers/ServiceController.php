@@ -25,10 +25,10 @@ class ServiceController extends Controller
         $data = $request->validate([
             'name'      => 'required|string|max:32',
             'tipodeservicos'     => 'required|int|max:10',
-            'valor'  => 'required|float|max:12',
+            'valor'  => 'required|numeric|max:12',
             'formadepagamento'  => 'required|int|max:10',
             'codigo'  => 'required|string|max:16',
-            //'localizacao'  => 'required|float|min:6|max:12',
+            
         ]);
 
         $data['codigo'] = bcrypt($data['codigo']);
@@ -40,10 +40,10 @@ class ServiceController extends Controller
         $data = $request->validate([
             'name'      => 'required|string|max:32',
             'tipodeservicos'     => 'required|int|max:10',
-            'valor'  => 'required|float|max:12',
+            'valor'  => 'required|numeric|max:12',
             'formadepagamento'  => 'required|int|max:10',
             'codigo'  => 'required|string|max:16',
-            //'localizacao'  => 'required|float|min:6|max:12',
+            
         ]);
 
         $data['codigo'] = uniqid();
@@ -60,13 +60,13 @@ class ServiceController extends Controller
     public function paymentTypes(Service $service){
 
         return [
-            'data' => App\Service::PAYMENT_TYPES
+            'data' => \App\Service::PAYMENT_TYPES
         ];
     }
 
     public function serviceTypes(Service $service){
         return [
-            'data' => App\Service::SERVICE_TYPES
+            'data' => \App\Service::SERVICE_TYPES
         ];
 
     }
