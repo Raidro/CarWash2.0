@@ -24,11 +24,11 @@ class ServiceController extends Controller
 
         $data = $request->validate([
             'name'      => 'required|string|max:32',
-            //'tipodeservicos'     => 'required|string|max:64',
-            'valor'  => 'required|double|min:6|max:24',
-            //'formadepagamento'  => 'required|string|min:6|max:24',
-            'codigo'  => 'required|string|min:6|max:24',
-            'localizacao'  => 'required|float|min:6|max:12',
+            'tipodeservicos'     => 'required|int|max:10',
+            'valor'  => 'required|float|max:12',
+            'formadepagamento'  => 'required|int|max:10',
+            'codigo'  => 'required|string|max:16',
+            //'localizacao'  => 'required|float|min:6|max:12',
         ]);
 
         $data['codigo'] = bcrypt($data['codigo']);
@@ -39,11 +39,11 @@ class ServiceController extends Controller
 
         $data = $request->validate([
             'name'      => 'required|string|max:32',
-            //'tipodeservicos'     => 'required|string|max:64',
-            'valor'  => 'required|double|min:6|max:24',
-            //'formadepagamento'  => 'required|string|min:6|max:24',
-            'codigo'  => 'required|string|min:6|max:24',
-            'localizacao'  => 'required|float|min:6|max:12',
+            'tipodeservicos'     => 'required|int|max:10',
+            'valor'  => 'required|float|max:12',
+            'formadepagamento'  => 'required|int|max:10',
+            'codigo'  => 'required|string|max:16',
+            //'localizacao'  => 'required|float|min:6|max:12',
         ]);
 
         $data['codigo'] = uniqid();
