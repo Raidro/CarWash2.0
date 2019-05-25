@@ -17,7 +17,7 @@
 #### O que vai ter? -&gt;
 
 * cliente \(id, nome, o tipo de lavagem, valor, forma de pagamento \)
-* cadastro \(id, nome, e-mail, user, senha\)
+* cadastro \(id, nome, e-mail, senha\)
 * serviço \(id, nome, tipo de serviço,\(vai oferecer que tipo de limpeza?\), forma de pagamento, valor e codigo\)
 * localização \(GPS: latitude e longitude\) 
 * forma de pagamento \(cartão, dinheiro ou á vista\)
