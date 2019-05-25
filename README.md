@@ -22,5 +22,11 @@
 * localização \(GPS: latitude e longitude\) 
 * forma de pagamento \(cartão, dinheiro ou á vista\)
 
+#### Diagrama do banco de dados -&gt;
+
+
+
+![](/assets/Captura de Tela_20190524230210.png)
+
 
 
